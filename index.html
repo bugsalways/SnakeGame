@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>贪吃蛇游戏</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>贪吃蛇游戏</h1>
+        <!-- 游戏信息区域 - 居中显示 -->
+        <div class="game-info" style="text-align: center;">
+            <!-- 分数显示区域 -->
+            <div class="score-board" style="display: inline-block; margin-bottom: 15px;">
+                <div class="score-display">
+                    <span class="score-label">得分</span>
+                    <span id="score" class="score-value">0</span>
+                </div>
+                <div class="high-score-display">
+                    <span class="score-label">最高分</span>
+                    <span id="high-score" class="score-value">0</span>
+                </div>
+            </div>
+            
+            <!-- 控制按钮区域 - 居中显示 -->
+            <div class="controls" style="display: inline-block; margin-bottom: 15px;">
+                <button id="start-btn" class="btn">开始游戏</button>
+                <button id="pause-btn" class="btn" disabled>暂停</button>
+                <button id="reset-btn" class="btn" disabled>重置</button>
+            </div>
+        </div>
+        
+        <!-- 游戏设置 - 仅保留速度控制 -->
+        <div class="game-settings" style="text-align: center;">
+            <div class="speed-control">
+                <label for="speed-slider">游戏速度:</label>
+                <input type="range" id="speed-slider" min="50" max="200" value="150" step="10">
+                <span id="speed-value">中等</span>
+            </div>
+        </div>
+        <div class="game-container">
+            <canvas id="gameCanvas" width="400" height="400"></canvas>
+        </div>
+        <div class="instructions">
+            <h3>游戏说明</h3>
+            <p>使用方向键或WASD控制蛇的移动方向，吃到食物得分，撞到墙壁或自己的身体游戏结束。</p>
+            <p>在移动设备上，可使用下方的虚拟方向键控制。</p>
+        </div>
+        <div class="mobile-controls">
+            <button class="arrow-btn up" id="up-btn">↑</button>
+            <div class="arrow-row">
+                <button class="arrow-btn left" id="left-btn">←</button>
+                <button class="arrow-btn right" id="right-btn">→</button>
+            </div>
+            <button class="arrow-btn down" id="down-btn">↓</button>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
